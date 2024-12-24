@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A training-free framework that makes precise video colour editing accessible through an intuitive interface while maintaining professional-quality output.">
+  <meta name="keywords" content="Video Colour Editing, Diffusion, Training-free">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- meta name="image" property="og:image" content="https://drive.google.com/thumbnail?id=18Z2e3V3WW--qTWAO3SG47fPPwKc6FSLm&sz=w1000">
+  <meta name="image" property="twitter:image" content="https://drive.google.com/thumbnail?id=18Z2e3V3WW--qTWAO3SG47fPPwKc6FSLm&sz=w1000">
+  <meta name="image" property="fb:image" content="https://drive.google.com/thumbnail?id=18Z2e3V3WW--qTWAO3SG47fPPwKc6FSLm&sz=w1000"-->
+  <title>DreamColour: Controllable Video Colour Editing without Training</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://chaitron.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="display: inline-flex; align-items: center;">
+            <img src="./static/images/clouds.png" alt="Cloud Emoji" style="width: 60px; height: 60px; margin-right: 8px;" />
+            <span style="color: SteelBlue; margin-left: 4px;">
+              Dream
+            </span>
+            <span style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text; color: transparent;">
+                Colour
+            </span>
+            <span style="color: Black; margin-left: 4px;">
+              :
+            </span>
+        </h1>
+        
+        
+        
+          <h1 class="subtitle has-text-centered"><b>Controllable Video Colour Editing without Training</b></h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://chaitron.github.io">Chaitat Utintu</a><span>&#42;</span>,</span>
+            <span class="author-block">
+              <a href="http://www.pinakinathc.me/">Pinaki Nath Chowdhury</a>,</span>
+            <span class="author-block">
+              <a href="https://aneeshan95.github.io">Aneeshan Sain</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://subhadeepkoley.github.io">Subhadeep Koley</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://ayankumarbhunia.github.io">Ayan Kumar Bhumia</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.surrey.ac.uk/people/yi-zhe-song">Yi-Zhe Song</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><span>&#42;</span>Interned with SketchX</span><br>
+            <span class="author-block">SketchX, CVSSP, University of Surrey</span>
+          </div>
+
+
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2412.05180"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2412.05180"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/CHAITron/DreamColour"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop" style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
+    <div class="hero-body" style="flex-direction: column; align-items: center; width: 100%;">
+      <img src="./static/images/teaser.png"
+      class="demo-image"
+      alt="Demo Image."/>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">DreamColour</span> &nbsp;&nbsp;&nbsp;introduces an intuitive, training-free framework for precise, 
+        professional-quality video colour editing, combining a user-friendly interface 
+        to deliver seamless results.
+      </h2>
+      <video src="./static/images/teaser.mp4" controls autoplay loop playsinline preload="auto" style="width: 100%; height: auto;">
+        Your browser does not support the video tag.
+    </video>
+    
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Video colour editing is a crucial task for content creation, 
+            yet existing solutions either require painstaking frame-by-frame 
+            manipulation or produce unrealistic results with temporal artefacts. 
+            We present a practical, training-free framework that makes precise 
+            video colour editing accessible through an intuitive interface while 
+            maintaining professional-quality output. 
+            Our key insight is that by decoupling spatial and temporal aspects of colour editing, 
+            we can better align with users' natural workflow -- allowing them to focus on precise colour selection 
+            in key frames before automatically propagating changes across time. 
+          </p>
+          <p>
+            We achieve this through a novel technical framework that combines: 
+            (i) a simple point-and-click interface merging grid-based colour selection with 
+            automatic instance segmentation for precise spatial control, 
+            (ii) bidirectional colour propagation that leverages inherent video motion patterns, 
+            and (iii) motion-aware blending that ensures smooth transitions even with complex object movements. 
+            Through extensive evaluation on diverse scenarios, 
+            we demonstrate that our approach matches or exceeds state-of-the-art methods 
+            while eliminating the need for training or specialized hardware, 
+            making professional-quality video colour editing accessible to everyone.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Architecture</h2>
+        <img src="./static/images/intra.png"
+                class="model-image"
+                alt="Model Image."/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom: 40px;">
+          <span class="dnerf"></span><strong>Intra-frame colour editing pipeline.</strong>
+          </h2>
+        <img src="./static/images/inter.png"
+                class="model-image"
+                alt="Model Image."/>
+        <h2 class="subtitle has-text-centered" style="margin-bottom: 40px;">
+          <span class="dnerf"></span><strong>Inter-frame colour editing pipeline.</strong>
+          </h2>
+          <img src="./static/images/multi.png"
+          class="model-image"
+          alt="Model Image."/>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf"></span><strong>Multi-frame colour editing pipeline.</strong>
+          </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{utintu2024dreamcolour,
+      author    = {Chaitat Utintu and Pinaki Nath Chowdhury and Aneeshan Sain and Subhadeep Koley and Ayan Kumar Bhunia and Yi-Zhe Song},
+      title     = {DreamColour: Controllable Video Colour Editing without Training},
+      journal   = {arXiv preprint arXiv:2412.05180},
+      year      = {2024},
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Template borrows from <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
